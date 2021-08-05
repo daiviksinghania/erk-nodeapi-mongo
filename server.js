@@ -15,9 +15,9 @@ app.use(bodyParser.json());
 app.use("/test", function (req, res) {
     res.send("Welcome to Nodejs Api");
 });
-
-app.use('/api/',routes);
-
+console.log("before route working fine")
+app.use('/api',routes);
+console.log("after route working fine")
 app.listen(PORT, () => {
     console.log(`you are server is running on ${PORT}`);
 })
