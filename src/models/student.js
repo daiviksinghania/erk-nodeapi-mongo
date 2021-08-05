@@ -1,6 +1,6 @@
-import db from '../config/db.js';
+import mongoose from 'mongoose';
 import StudentSchema from './student-schema';
 
-const Student = db.model("Student", StudentSchema);
+const Student = mongoose.model("Student", StudentSchema);
 
 export default Student;

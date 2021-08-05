@@ -1,5 +1,9 @@
-import { connect } from "mongoose";
+import { connect, connection } from 'mongoose';
 
-const db = connect('mongodb://localhost:27017/students', {useNewUrlParser: true});
+const mongoConnectionUrl = 'mongodb://localhost:27017/students'
 
-export default db;
+try {
+    await mongoose.connect(mongoConnectionUrl, { useNewUrlParser: true });
+} catch (error) {
+    handleError(error);
+}

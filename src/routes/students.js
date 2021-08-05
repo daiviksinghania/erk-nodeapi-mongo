@@ -1,8 +1,9 @@
+import express from express;
 import { addNewStudent } from '../controllers/student'
  
-const routes = (app) => {
-    app.route('/students')
-        .post(addNewStudent)
+const routes = () => {
+    const studentRoute = express.Router();
+    studentRoute.post('/students', addNewStudent)
 }
  
-export default routes
+export default routes;

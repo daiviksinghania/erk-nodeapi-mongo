@@ -14,11 +14,10 @@ export function addNewStudent(req, res) {
     })
     student.save().then(
         (newstudent) => {
-            const sessionToken = sign(newstudent._id, JWT_SECRET, { expiresIn: 60*60*24})
+            // const sessionToken = sign(newstudent._id, JWT_SECRET, { expiresIn: 60*60*24})
             res.json({
                 user: newstudent,
-                message: 'success',
-                sessionToken: sessionToken
+                message: 'success'
             })
         },
         (err) => {
