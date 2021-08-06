@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import { connect, connection } from 'mongoose';
 
 const mongoConnectionUrl = 'mongodb://localhost:27017/students'
